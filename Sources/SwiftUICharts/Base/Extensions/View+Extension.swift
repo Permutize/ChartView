@@ -8,4 +8,8 @@ extension View {
     public func chartStyle(_ style: ChartStyle) -> some View {
         self.environmentObject(style)
     }
+
+    public func bgChartStyle(_ bgStyle: ChartStyle) -> some View {
+        self.environmentObject(bgStyle)
+    }
 }
