@@ -6,7 +6,6 @@ public struct Line: View {
     @ObservedObject var chartData: ChartData
 
     var style: ChartStyle
-    var bgStyle: ChartStyle
 
     @State private var showIndicator: Bool = false
     @State private var touchLocation: CGPoint = .zero
@@ -29,7 +28,7 @@ public struct Line: View {
                 if self.didCellAppear && self.showBackground {
                     LineBackgroundShapeView(chartData: chartData,
                                             geometry: geometry,
-                                            style: bgStyle)
+                                            style: style)
                 }
                 LineShapeView(chartData: chartData,
                               geometry: geometry,
@@ -104,8 +103,8 @@ struct Line_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            Line(chartData:  ChartData([8, 23, 32, 7, 23, -4]), style: blackLineStyle, bgStyle: blackLineStyle)
-            Line(chartData:  ChartData([8, 23, 32, 7, 23, 43]), style: redLineStyle, bgStyle: redLineStyle)
+            Line(chartData:  ChartData([8, 23, 32, 7, 23, -4]), style: blackLineStyle)
+            Line(chartData:  ChartData([8, 23, 32, 7, 23, 43]), style: redLineStyle)
         }
     }
 }
