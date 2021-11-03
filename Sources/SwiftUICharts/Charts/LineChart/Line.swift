@@ -104,8 +104,8 @@ struct Line_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            Line(chartData:  ChartData([8, 23, 32, 7, 23, -4]), style: blackLineStyle)
-            Line(chartData:  ChartData([8, 23, 32, 7, 23, 43]), style: redLineStyle)
+            Line(chartData:  ChartData([8, 23, 32, 7, 23, -4]), style: blackLineStyle, bgStyle: blackLineStyle)
+            Line(chartData:  ChartData([8, 23, 32, 7, 23, 43]), style: redLineStyle, bgStyle: redLineStyle)
         }
     }
 }
