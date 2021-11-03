@@ -6,10 +6,11 @@ public struct Line: View {
     @ObservedObject var chartData: ChartData
 
     var style: ChartStyle
+    var bgStyle: ChartStyle
 
     @State private var showIndicator: Bool = false
     @State private var touchLocation: CGPoint = .zero
-    @State private var showBackground: Bool = false
+    @State private var showBackground: Bool = true
     @State private var didCellAppear: Bool = false
 
     var curvedLines: Bool = true
@@ -28,7 +29,7 @@ public struct Line: View {
                 if self.didCellAppear && self.showBackground {
                     LineBackgroundShapeView(chartData: chartData,
                                             geometry: geometry,
-                                            style: style)
+                                            style: bgStyle)
                 }
                 LineShapeView(chartData: chartData,
                               geometry: geometry,
