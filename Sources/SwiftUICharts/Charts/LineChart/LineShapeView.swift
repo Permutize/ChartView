@@ -5,6 +5,7 @@ struct LineShapeView: View, Animatable {
     var geometry: GeometryProxy
     var style: ChartStyle
     var trimTo: Double = 0
+    var lineWidth: CGFloat = 3
 
     var animatableData: CGFloat {
         get { CGFloat(trimTo) }
@@ -19,7 +20,7 @@ struct LineShapeView: View, Animatable {
             .stroke(LinearGradient(gradient: style.foregroundColor.first?.gradient ?? ColorGradient.orangeBright.gradient,
                                    startPoint: .leading,
                                    endPoint: .trailing),
-                    style: StrokeStyle(lineWidth: 3, lineJoin: .round))
+                    style: StrokeStyle(lineWidth: lineWidth, lineJoin: .round))
             .rotationEffect(.degrees(180), anchor: .center)
             .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
     }

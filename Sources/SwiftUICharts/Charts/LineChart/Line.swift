@@ -33,7 +33,8 @@ public struct Line: View {
                 LineShapeView(chartData: chartData,
                               geometry: geometry,
                               style: style,
-                              trimTo: didCellAppear ? 1.0 : 0.0)
+                              trimTo: didCellAppear ? 1.0 : 0.0,
+                              lineWidth: style.lineWidth)
                     .animation(.easeIn)
                 if self.showIndicator {
                     IndicatorPoint()
